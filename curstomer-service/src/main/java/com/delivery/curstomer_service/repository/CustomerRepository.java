@@ -1,9 +1,9 @@
 package com.delivery.curstomer_service.repository;
 
 import com.delivery.curstomer_service.entity.Customer;
-import org.hibernate.internal.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
 
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {

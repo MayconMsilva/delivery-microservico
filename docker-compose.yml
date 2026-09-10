@@ -50,7 +50,7 @@ services:
       - delivery-network
 
   customer-service:
-    build: ./customer-service
+    build: ./curstomer-service
     container_name: delivery-customer-service
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/customer_db

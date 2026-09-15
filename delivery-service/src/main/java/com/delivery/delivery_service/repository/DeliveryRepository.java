@@ -1,4 +1,4 @@
-package com.delivery.delivery_service;
+package com.delivery.delivery_service.repository;
 
 import com.delivery.delivery_service.entity.model.Delivery;
 import org.springframework.data.jpa.repository.JpaRepository;

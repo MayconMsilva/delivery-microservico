@@ -85,6 +85,26 @@ services:
     networks:
       - delivery-network
 
+  delivery-service:
+    build: ./delivery-service
+    container_name: delivery-delivery-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/delivery_db
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+    ports:
+      - "8084:8084"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - delivery-network
+
 volumes:
   postgres_data:
 
